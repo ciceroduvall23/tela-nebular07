@@ -1,0 +1,14 @@
+<span *ngIf="status == 0"
+  ><nb-tag [text]="'Novo'" status="basic" appearance="outline"></nb-tag
+></span>
+<span *ngIf="status == 1"
+  ><nb-tag [text]="'Confirmado'" status="info" appearance="outline"></nb-tag
+></span>
+<span *ngIf="status == 2"
+  ><nb-tag [text]="'Em preparo'" status="warning" appearance="outline"></nb-tag
+></span>
+<span *ngIf="status == 3"
+  ><nb-tag [text]="'Pronto'" status="danger" appearance="outline"></nb-tag
+></span>
+<!-- TODO: add new status or alter existing ones to differentiate primary and danger -->
+

@@ -1,0 +1,19 @@
+::ng-deep {
+  .user-area .user-name {
+    // color: white !important;
+    font-weight: 600 !important;
+  }
+
+  .user-area .menu-icon {
+    color: var(--primary-color);
+  }
+}
+
+.user-area {
+  cursor: pointer;
+}
+
+.settings-container {
+  display: flex;
+  justify-content: flex-end;
+}

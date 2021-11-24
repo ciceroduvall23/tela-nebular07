@@ -1,0 +1,16 @@
+<nb-user
+  [picture]="_imageSrc || imageSrc"
+  onlyPicture
+  [showName]="false"
+  [showTitle]="false"
+  [showInitials]="false"
+  (click)="input.click()"
+></nb-user>
+
+<input
+  #input
+  nz-input
+  type="file"
+  accept="image/png, image/jpeg"
+  (change)="onFileChange($event)"
+/>

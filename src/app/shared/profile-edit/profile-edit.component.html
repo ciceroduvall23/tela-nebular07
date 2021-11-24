@@ -1,0 +1,86 @@
+<nb-tabset>
+  <nb-tab tabTitle="Perfil">
+    <form class="default-form" [formGroup]="profileForm" (ngSubmit)="submitProfileForm()">
+      <nb-form-field>
+        <nb-icon nbPrefix icon="person-outline" pack="eva"></nb-icon>
+        <input
+          fullWidth
+          type="text"
+          nbInput
+          formControlName="name"
+          placeholder="Seu nome"
+          appFormControlStatus
+          [control]="profileControls.name"
+          status
+        />
+      </nb-form-field>
+      <nb-form-field>
+        <nb-icon nbPrefix icon="at-outline" pack="eva"></nb-icon>
+        <input
+          fullWidth
+          type="text"
+          nbInput
+          formControlName="email"
+          placeholder="exemplo@email.com"
+          appFormControlStatus
+          [control]="profileControls.email"
+          status
+        />
+      </nb-form-field>
+      <button
+        type="submit"
+        nbButton
+        fullWidth
+        status="primary"
+        [nbSpinner]="loading"
+        [disabled]="loading || !profileForm.valid"
+      >
+        ATUALIZAR
+      </button>
+    </form>
+  </nb-tab>
+  <nb-tab tabTitle="Senha">
+    <form
+      class="default-form"
+      [formGroup]="passwordForm"
+      (ngSubmit)="submitPasswordForm()"
+    >
+      <nb-form-field>
+        <nb-icon nbPrefix icon="lock-outline" pack="eva"></nb-icon>
+        <input
+          fullWidth
+          type="password"
+          nbInput
+          formControlName="password"
+          placeholder="Nova senha"
+          appFormControlStatus
+          [control]="profileControls.password"
+          status
+        />
+      </nb-form-field>
+      <nb-form-field>
+        <nb-icon nbPrefix icon="lock-outline" pack="eva"></nb-icon>
+        <input
+          fullWidth
+          type="password"
+          nbInput
+          formControlName="confirm"
+          placeholder="Confirme a nova senha"
+          appFormControlStatus
+          [control]="profileControls.confirm"
+          status
+        />
+      </nb-form-field>
+      <button
+        type="submit"
+        nbButton
+        fullWidth
+        status="primary"
+        [nbSpinner]="loading"
+        [disabled]="loading || !passwordForm.valid"
+      >
+        ATUALIZAR
+      </button>
+    </form>
+  </nb-tab>
+</nb-tabset>

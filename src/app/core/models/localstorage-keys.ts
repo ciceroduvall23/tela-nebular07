@@ -1,0 +1,5 @@
+export enum LocalStorageKeys {
+  USER = '@ID.GPPDFRNMFK',
+  REMMEMBER_ME = '@ID.GRRMEKRNUSTPDK',
+  USER_PASSWORD = '@ID.GOAIQNWEASJDHOQIJW',
+}

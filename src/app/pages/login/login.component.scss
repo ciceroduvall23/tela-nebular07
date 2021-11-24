@@ -1,0 +1,66 @@
+:host::ng-deep {
+  #body-column {
+    background-image: linear-gradient(140.7deg, rgb(0 0 0) -84.19%, #00000038 117.09%),
+      url('./../../../assets/img/group-discussing-metrics.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.img-container {
+  margin: 1rem 1rem 0 1rem;
+}
+
+form {
+  display: flex;
+  margin: auto;
+  max-width: 400px;
+  height: 100%;
+}
+
+nb-card {
+  background-color: #000000ad;
+  margin: auto;
+  width: 100%;
+  border: none !important;
+
+  a,
+  p,
+  h6,
+  span {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  h6 {
+    margin: 0;
+  }
+
+  nb-card-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  nb-card-footer p {
+    font-size: 0.9rem;
+  }
+}
+
+:host::ng-deep {
+  nb-checkbox * {
+    color: #fff !important;
+    cursor: pointer;
+  }
+}
+
+.remmember-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    cursor: pointer;
+  }
+}

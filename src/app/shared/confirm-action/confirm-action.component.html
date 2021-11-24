@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-body>
+    <p>{{ title }}</p>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton fullWidth status="primary" (click)="confirmAction(false)">
+      CANCELAR
+    </button>
+    <button nbButton fullWidth status="success" (click)="confirmAction(true)">
+      CONFIRMAR
+    </button>
+  </nb-card-footer>
+</nb-card>

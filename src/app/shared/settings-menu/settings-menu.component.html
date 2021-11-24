@@ -1,0 +1,20 @@
+<div class="settings-container">
+  <ng-container
+    *ngTemplateOutlet="userTpl; context: { user: user$ | async }"
+  ></ng-container>
+</div>
+
+<ng-template #userTpl let-user="user">
+  <nb-user
+    class="user-area"
+    size="large"
+    [name]="user?.name"
+    [nbContextMenu]="(menuItems$ | async)!"
+    [nbContextMenuTag]="menuTag"
+    [picture]="user?.company?.image"
+    [onlyPicture]="user?.company?.image"
+    [showName]="(innerWidth$.asObservable() | async)! >= 768"
+  >
+    >
+  </nb-user>
+</ng-template>

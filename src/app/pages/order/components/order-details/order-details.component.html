@@ -1,0 +1,52 @@
+<ng-container *ngTemplateOutlet="orderTpl; context: { order: order }"></ng-container>
+<ng-template #orderTpl let-order="order">
+  <div class="content">
+    <div class="order-details-header">
+      <b>Pedido:</b><order-code [code]="order.code"></order-code>
+      <order-status-tag
+        [status]="order.history[order.history.length - 1].status"
+      ></order-status-tag>
+      <span class="subtitle"
+        >{{ order.createdAt | date: 'dd/MM/yy' }} as
+        {{ order.createdAt | date: 'HH:mm' }}</span
+      >
+      <span class="customer subtitle">
+        <b>Cliente:&nbsp;</b>{{ order.customer.name }}
+      </span>
+      <span class="contact subtitle">
+        <b>Contato:&nbsp;</b>{{ order.customer.phoneNumber | mask: '(00) 0 0000-0000' }}
+      </span>
+      <span class="address subtitle"> <b>Endereço:&nbsp;</b>{{ order.address }} </span>
+    </div>
+    <nb-card *ngFor="let item of order.items">
+      <nb-card-header>
+        <span>{{ item?.product?.amount }}x&nbsp;</span>
+        <span>{{ item?.product?.name }}</span>
+      </nb-card-header>
+      <nb-card-body>
+        <div class="product">
+          <div class="product-details">
+            <ng-container *ngFor="let productItem of item?.items">
+              <span class="product-item-name text-hint">
+                {{ productItem?.amount }}x&nbsp;{{ productItem?.name }}
+              </span>
+            </ng-container>
+            <span class="product-total">
+              <b>{{ formatPrice(item?.product?.total) }}</b>
+            </span>
+          </div>
+          <div class="img-container">
+            <img
+              [src]="item?.product?.image || 'assets/img/noimage.png'"
+              alt="product-image"
+              appLazyLoadImage
+            />
+          </div>
+        </div>
+      </nb-card-body>
+      <!-- <nb-card-footer>
+        <span>{{ item?.product?.description }}</span>
+      </nb-card-footer> -->
+    </nb-card>
+  </div>
+</ng-template>

@@ -1,0 +1,35 @@
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+
+table {
+  font-size: 11px;
+}
+
+hr {
+  border-top: 1px solid black;
+}
+
+.hide-print {
+  display: none;
+}
+
+@page {
+  size: auto;
+  margin: 25mm 25mm 25mm 25mm;
+}
+
+* {
+  text-transform: uppercase;
+}
+
+.adc-title {
+  margin-left: -40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.adc-item {
+  margin-left: -25px;
+}

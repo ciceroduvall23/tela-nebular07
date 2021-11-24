@@ -1,0 +1,28 @@
+<nb-form-field style="width: 100%">
+  <nb-icon nbSuffix icon="search-outline" pack="eva"></nb-icon>
+  <nb-icon
+    nbPrefix
+    [icon]="prefixIcon"
+    pack="eva"
+    status="danger"
+    *ngIf="prefixIcon"
+  ></nb-icon>
+  <input
+    class="rounded"
+    type="text"
+    nbInput
+    [placeholder]="placeholder"
+    fullWidth
+    [ngModel]="searchTerm"
+    autocomplete="off"
+    (ngModelChange)="inputChanged($event)"
+    [nbAutocomplete]="auto"
+    [focusInputOnValueChange]="false"
+  />
+
+  <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
+    <nb-option *ngFor="let option of data$ | async" [value]="getOptionValue(option)">
+      {{ getOptionValue(option) }}
+    </nb-option>
+  </nb-autocomplete>
+</nb-form-field>

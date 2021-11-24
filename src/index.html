@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <title>Template jogos</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="assets/img/logo gamer.png" />
+
+    <style>
+      .box {
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;
+      }
+
+      .bounce-4 {
+        animation-name: bounce-4;
+        animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+      }
+
+      @keyframes bounce-4 {
+        0% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        10% {
+          transform: scale(1.1, 0.9) translateY(0);
+        }
+
+        30% {
+          transform: scale(0.9, 1.1) translateY(-100px);
+        }
+
+        50% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        100% {
+          transform: scale(1, 1) translateY(0);
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root>
+      <div
+        style="
+          display: flex;
+          flex: 1;
+          height: 100vh;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div style="max-width: 300px; text-align: center">
+          <img
+            class="box bounce-4"
+            src="assets/svg/hare-filled-red.svg"
+            style="width: 100px"
+            alt="Instant Delivery"
+          />
+          <br />
+          <span>Carregando...</span>
+        </div>
+      </div>
+    </app-root>
+  </body>
+</html>

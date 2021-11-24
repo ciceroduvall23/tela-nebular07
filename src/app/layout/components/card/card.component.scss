@@ -1,0 +1,48 @@
+
+.card-row {
+  display: flex;
+  margin: 0 -0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 20px;
+  max-width: 1144px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.title-headerCard
+{
+  color: white;
+  background: #00d68f;
+}
+.card-col {
+  flex: 1 0 33.3%;
+  width: 66.3%;
+  margin: 0;
+  padding: 20px;
+  max-width: 1144px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-backgroundImg
+{
+
+  background: url('../../../../assets/img/assassin-s-creed.jpg')no-repeat;
+  min-height: 42vh;
+  width: 100%;
+  background-size: 451px 402px;
+  background-position: -56px;
+}
+
+@media (max-width:1024px) {
+  .card-row {
+   display: flex;
+    padding: 0 0 70px;
+    flex-direction: column;
+  }
+  .card-backgroundImg
+{
+  background-size: 630px 382px;
+}
+}
+

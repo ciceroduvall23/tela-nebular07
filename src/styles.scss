@@ -1,0 +1,84 @@
+@import 'theme/_variables';
+@import 'theme/themes.scss';
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+/* You can add global styles to this file, and also import other style files */
+
+//Remove outline from elements when clicking
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) div:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus,
+body:not(.user-is-tabbing) li:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 1366px;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+.img-container {
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.default-form {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+nb-window {
+  max-height: 80% !important;
+  min-width: 500px !important;
+
+  > nb-card {
+    height: 100%;
+  }
+}
+nb-window:not(.auto-height-modal) {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .default-form {
+    width: 100%;
+    grid-template-columns: 1fr;
+
+    > * {
+      grid-column: 1 / 2 !important;
+    }
+  }
+
+  // set the width of windows to full screen on sm and md screens
+  nb-window {
+    min-width: 100% !important;
+    max-height: 100% !important;
+    height: 100%;
+    position: absolute !important;
+
+    > nb-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      > nb-card-body {
+        padding: 0 !important;
+      }
+    }
+  }
+  .cdk-global-scrollblock {
+    overflow-y: hidden !important;
+  }
+}

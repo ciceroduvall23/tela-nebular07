@@ -1,0 +1,21 @@
+<nb-card [nbSpinner]="(loading$ | async)!">
+  <nb-card-body>
+    <instant-table
+      [columns]="columns"
+      [data]="orders$"
+      [customColumns]="[
+        { propertyName: 'code', templateRef: codeColumn },
+        { propertyName: 'status', templateRef: statusColumn }
+      ]"
+      [actions]="tableActions"
+      (actionOptionClicked)="tableActionOptionClicked($event)"
+    ></instant-table>
+  </nb-card-body>
+</nb-card>
+
+<ng-template #codeColumn let-data="$implicit">
+  <order-code [code]="data"></order-code>
+</ng-template>
+<ng-template #statusColumn let-data="$implicit">
+  <order-status-tag [status]="data"></order-status-tag>
+</ng-template>
