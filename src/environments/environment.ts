@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.instantdelivery.com.br/v1/store/',
-  apiAdminUrl: 'https://api.instantdelivery.com.br/v1/admin/',
+
 }
 
 /*

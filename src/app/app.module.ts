@@ -4,8 +4,6 @@ import localePt from '@angular/common/locales/pt'
 import { LOCALE_ID, NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { JwtInterceptor } from '@core/interceptors'
-import { ErrorInterceptor } from '@core/interceptors/http-error-interceptor'
 import { environment } from '@environments/environment'
 ;
 import { NbEvaIconsModule } from '@nebular/eva-icons'
@@ -84,12 +82,7 @@ if (!theme || !validThemes.includes(theme)) {
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptor,
-      multi: true,
-    },
+    
   ],
   bootstrap: [AppComponent],
 })
