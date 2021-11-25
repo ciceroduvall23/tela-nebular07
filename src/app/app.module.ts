@@ -7,8 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { JwtInterceptor } from '@core/interceptors'
 import { ErrorInterceptor } from '@core/interceptors/http-error-interceptor'
 import { environment } from '@environments/environment'
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+;
 import { NbEvaIconsModule } from '@nebular/eva-icons'
 import {
   NbDialogModule,
@@ -32,8 +31,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { CardComponent } from './layout/components/card/card.component';
 import { LayoutComponent } from './layout/components/layout.component';
-import { SidebarComponent } from './layout/components/sidebar/sidebar.component';
-import { LoginComponent } from './layout/login/login.component';
+
 registerLocaleData(localePt)
 
 export function maskConfigFunction(): Partial<IConfig> {
@@ -56,14 +54,12 @@ if (!theme || !validThemes.includes(theme)) {
 }
 
 @NgModule({
-  declarations: [AppComponent,CardComponent,LayoutComponent, SidebarComponent, LoginComponent],
+  declarations: [AppComponent,CardComponent,LayoutComponent],
   imports: [
     BrowserModule,
     NbSidebarModule,
     NbSidebarModule.forRoot(),
     AppRoutingModule,
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase), // Your config
     BrowserAnimationsModule,
     HttpClientModule,
     NbThemeModule.forRoot({ name: theme ? theme : 'default' }),
